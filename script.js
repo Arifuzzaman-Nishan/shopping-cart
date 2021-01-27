@@ -14,7 +14,7 @@ function addSubOperation(id, sign) {
 }
 
 
-const currentPrice = getId("current-price"); //to get the current price inner text id
+const currentPrice = getId("current-price-1"); //to get the current price inner text id
 const currentPriceValue = parseInt(currentPrice.innerText);
 
 
@@ -29,8 +29,8 @@ function firstHandler(btnId , inputNumberId , currentPriceId, signValue) {
     })
 }
 
-firstHandler("plus-btn","input-number-1","current-price",1);
-firstHandler("minus-btn","input-number-1","current-price",-1);
+firstHandler("plus-btn-1","input-number-1","current-price-1",1);
+firstHandler("minus-btn-1","input-number-1","current-price-1",-1);
 
 // minus handler
 // const minusBtn = getId("minus-btn");
