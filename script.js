@@ -29,9 +29,12 @@ function firstHandler(btnId, inputNumberId, currentPriceId, signValue) {
 
     Btn.addEventListener("click", function () {
         addSubOperation(inputNumberId, signValue);
-        getId(currentPriceId).innerText = currentPriceValue * inputNumber; // to set the current price value;
+        const totalPrice = currentPriceValue * inputNumber;
+        getId(currentPriceId).innerText = totalPrice; // to set the current price value;
     })
 }
+
+
 
 
 
@@ -42,3 +45,14 @@ firstHandler("minus-btn-1", "input-number-1", "current-price-1", -1);
 // secondRow
 firstHandler("plus-btn-2", "input-number-2", "current-price-2", 1);
 firstHandler("minus-btn-2", "input-number-2", "current-price-2", -1);
+
+
+const checkBtn = getId("checkout-btn");
+checkBtn.addEventListener("click",function(){
+    const firstValue = parseInt(getId("current-price-1").innerText);
+    const secondValue = parseInt(getId("current-price-2").innerText);
+    const sum = firstValue+secondValue;
+    // getId("sub-total").innerText = "";
+    getId("sub-total").innerText = sum;
+    getId("total").innerText = sum;
+})
