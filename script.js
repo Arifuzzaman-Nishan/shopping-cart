@@ -14,14 +14,19 @@ function addSubOperation(id, sign) {
 }
 
 
-const currentPrice = getId("current-price-1"); //to get the current price inner text id
-const currentPriceValue = parseInt(currentPrice.innerText);
+function oneTimeCalculation(id) {
+    const currentPrice = getId(id); //to get the current price inner text id
+    const currentPriceValue = parseInt(currentPrice.innerText);
+    return currentPriceValue;
+}
 
 
 ///plus handler
+var cnt = 0;
 
-function firstHandler(btnId , inputNumberId , currentPriceId, signValue) {
+function firstHandler(btnId, inputNumberId, currentPriceId, signValue) {
     const Btn = getId(btnId);
+    const currentPriceValue = oneTimeCalculation(currentPriceId);
 
     Btn.addEventListener("click", function () {
         addSubOperation(inputNumberId, signValue);
@@ -29,8 +34,8 @@ function firstHandler(btnId , inputNumberId , currentPriceId, signValue) {
     })
 }
 
-firstHandler("plus-btn-1","input-number-1","current-price-1",1);
-firstHandler("minus-btn-1","input-number-1","current-price-1",-1);
+firstHandler("plus-btn-1", "input-number-1", "current-price-1", 1);
+firstHandler("minus-btn-1", "input-number-1", "current-price-1", -1);
 
 // minus handler
 // const minusBtn = getId("minus-btn");
