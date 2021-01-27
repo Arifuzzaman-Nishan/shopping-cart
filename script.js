@@ -21,8 +21,7 @@ function oneTimeCalculation(id) {
 }
 
 
-///plus handler
-var cnt = 0;
+//function
 
 function firstHandler(btnId, inputNumberId, currentPriceId, signValue) {
     const Btn = getId(btnId);
@@ -34,14 +33,12 @@ function firstHandler(btnId, inputNumberId, currentPriceId, signValue) {
     })
 }
 
+
+
+//firstRow 
 firstHandler("plus-btn-1", "input-number-1", "current-price-1", 1);
 firstHandler("minus-btn-1", "input-number-1", "current-price-1", -1);
 
-// minus handler
-// const minusBtn = getId("minus-btn");
-
-// minusBtn.addEventListener("click", function () {
-//     addSubOperation("input-number-1", -1);
-
-
-// })
+// secondRow
+firstHandler("plus-btn-2", "input-number-2", "current-price-2", 1);
+firstHandler("minus-btn-2", "input-number-2", "current-price-2", -1);
