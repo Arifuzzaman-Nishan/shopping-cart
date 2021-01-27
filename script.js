@@ -20,18 +20,23 @@ const currentPriceValue = parseInt(currentPrice.innerText);
 
 ///plus handler
 
-const plusBtn = getId("plus-btn");
+function firstHandler(btnId , inputNumberId , currentPriceId, signValue) {
+    const Btn = getId(btnId);
 
-plusBtn.addEventListener("click", function () {
-    addSubOperation("input-number-1", 1);
-    getId("current-price").innerText = currentPriceValue * inputNumber; // to set the current price value;
-})
+    Btn.addEventListener("click", function () {
+        addSubOperation(inputNumberId, signValue);
+        getId(currentPriceId).innerText = currentPriceValue * inputNumber; // to set the current price value;
+    })
+}
+
+firstHandler("plus-btn","input-number-1","current-price",1);
+firstHandler("minus-btn","input-number-1","current-price",-1);
 
 // minus handler
-const minusBtn = getId("minus-btn");
+// const minusBtn = getId("minus-btn");
 
-minusBtn.addEventListener("click", function () {
-    addSubOperation("input-number-1", -1);
+// minusBtn.addEventListener("click", function () {
+//     addSubOperation("input-number-1", -1);
 
 
-})
+// })
