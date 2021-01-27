@@ -1,3 +1,5 @@
+var inputNumber;
+
 // to catch the specific element
 function getId(id){
     return document.getElementById(id);
@@ -5,7 +7,7 @@ function getId(id){
 
 //add and minus operation
 function addSubOperation(id,sign){
-    var inputNumber = parseInt(document.getElementById(id).value);
+    inputNumber = parseInt(document.getElementById(id).value);
     inputNumber = inputNumber+(sign)*1;
     document.getElementById
     (id).value = inputNumber;
@@ -15,8 +17,11 @@ function addSubOperation(id,sign){
  const plusBtn = getId("plus-btn");
 
 plusBtn.addEventListener("click",function(){
-    addSubOperation("input-number-1",1);
-    const currentPrice = 
+    addSubOperation("input-number-1",1); // to increase the product quantity value;
+
+    const currentPrice = getId("current-price"); //to get the current price inner text id
+    const currentPriceValue = parseInt(currentPrice.innerText);
+    getId("current-price").innerText = currentPriceValue*inputNumber; // to set the current price value;
 })
 
 // minus handler
